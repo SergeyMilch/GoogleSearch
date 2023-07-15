@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"math/rand"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
 	"time"
@@ -111,7 +112,7 @@ func runSearch(c *gin.Context) {
 		sortBy = ""
 	}
 
-	API_KEY := "AIzaSyB89FHVjDdkdfjsD6QG_DF--ZmCMW7EmKaY"
+	API_KEY := os.Getenv("KEY")
 
 	CX := "e6b3c16aa3c714755"
 
