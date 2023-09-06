@@ -182,6 +182,10 @@ func LoadRoutes(r *gin.Engine) {
 }
 
 func init() {
+	err := godotenv.Load()
+	if err != nil {
+		panicWrapper("Error loading .env file", http.StatusNotFound)
+	}
 
 	r := gin.Default()
 	LoadRoutes(r)
